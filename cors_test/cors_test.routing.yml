@@ -1,0 +1,8 @@
+
+cors_test.request_info_controller_requestInfo:
+  path: 'cors-request'
+  defaults:
+    _controller: '\Drupal\cors_test\Controller\RequestInfoController::requestInfo'
+    _title: 'Request Info'
+  requirements:
+    _permission: 'access content'

@@ -7,6 +7,8 @@
     <h1><a href="#" id="logout">logout</a></h1>
     <h1><a href="#" id="logout_cred">logout_cred</a></h1>
     <h1><a href="#" id="get-node-1">get node 1</a></h1>
+    <h1><a href="#" id="test_cred">test_cred</a></h1>
+    <h1><a href="#" id="test_no_cred">test_no_cred</a></h1>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script type="text/javascript">
       (function($) {
@@ -74,6 +76,29 @@
           .then(res => console.log(res ))
           .catch(err => console.log(err));
         });
+
+        this.$('#test_no_cred').click(() => {
+          this.$.ajax({
+            url: this.domain + '/cors-request',
+            method: 'GET',
+            crossDomain: true
+          })
+          .then(res => console.log(res ))
+          .catch(err => console.log(err));
+        });
+        this.$('#test_cred').click(() => {
+          this.$.ajax({
+            url: this.domain + '/cors-request',
+            method: 'GET',
+            xhrFields: {
+               withCredentials: true
+            },
+            crossDomain: true
+          })
+          .then(res => console.log(res ))
+          .catch(err => console.log(err));
+        });
+
 
       })(window.$);
     </script>
